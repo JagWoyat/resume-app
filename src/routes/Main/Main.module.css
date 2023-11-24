@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introductionWrapper{
+    height: 500px;
+}
+
+.descriptionWrapper {
+    height: 500px;
+}

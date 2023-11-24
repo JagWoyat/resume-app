@@ -1,0 +1,35 @@
+.nameWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    /* margin-left: 2rem; */
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #a1aebd;
+  
+  }
+
+  .buttonIcon {
+    display: inline-block;
+    color: #a1aebd;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  h1 {
+      position: relative;
+      /* bottom: 0.5rem; */
+    }
+    /* @media (max-width: 750px) {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      .Icon {
+        width: 2rem;
+        height: 2rem;
+      }
+      h1 {
+        bottom: 0.25rem;
+      }
+    } */
+  
