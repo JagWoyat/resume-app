@@ -1,6 +1,6 @@
 .wrapper {
   display: block;
-  position: absolute;
+  position: fixed;
   background-color: #1e2126;
   top: 0px;
   left: 0px;

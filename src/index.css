@@ -13,6 +13,8 @@ body {
     color: #a1aebd;
 }
 
-main {
-    padding: 2rem;
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
