@@ -1,0 +1,54 @@
+.sectionWrapper {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    font-size: 1.25rem;
+}
+
+.mainWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 1000px;
+}
+
+.sectionWrapper a {
+    text-decoration: none;
+    color: #a1aebd;
+    font-weight: 600;
+}
+
+.sectionWrapper h3 {
+    font-size: 2.5rem;
+}
+
+.sectionWrapper p {
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.sectionWrapper h4 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.sectionWrapper ul {
+    list-style-position: inside;
+    padding-left: 2rem;
+}
+
+.carouselWrapper{
+    text-align: center;
+}
+
+.linkToApp {
+    display: inline-block;
+    background-color: aliceblue;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 75%;
+    border-radius: 10px 30px 30px 10px;
+}

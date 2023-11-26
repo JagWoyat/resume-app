@@ -1,38 +1,34 @@
 import React from "react";
 import Icon from "../common/Icon";
+import styles from "./AppOverview.module.css";
+import Carousel from "./Carousel";
 
-export default function AppOverview() {
+export default function AppOverview({ data }) {
   return (
-    <section>
-      <div>
-        <h3>Cryptocurrency App</h3>
-        <p>
-          Application utilizing{" "}
-          <a href="https://developers.coinranking.com/api">Coinranking API</a>{" "}
-          to display information about user's chosen cryptocurrencies. You can
-          explore list of the biggest cryptocurrencies by market cap and check
-          individual profiles of them, where you can add them to the list of
-          favorites. App also supports adding custom cryptocurrencies to the
-          list of favorites. All saved cryptocurrencies all saved in the
-          browser.
-        </p>
-        <p>
-          App was build with these tools:
-          <ul>
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>React Router</li>
-            <li>Styled Components</li>
-            <li>Redux</li>
-          </ul>
-        </p>
-      </div>
-      <div>
-        <div>Carousel with images</div>
-        <a href="https://elegant-dasik-a33ddd.netlify.app/">
-          <label>App is hosted on Netlify</label>
-          <Icon type="home" />
-        </a>
+    <section
+      style={{ backgroundImage: data.background }}
+      className={styles.sectionWrapper}
+    >
+      <h3>{data.name}</h3>
+      <div className={styles.mainWrapper}>
+        <div>
+          {data.description}
+          <div>
+            <h4>App was build with these tools:</h4>
+            <ul>
+              {data.tools.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <a className={styles.linkToApp} href={data.link}>
+            <label>App is hosted on Netlify</label>
+            <Icon type="home" />
+          </a>
+        </div>
+        <div className={styles.carouselWrapper}>
+          <Carousel />
+        </div>
       </div>
     </section>
   );
