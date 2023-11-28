@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../common/Icon";
 import styles from "./AppOverview.module.css";
 import Carousel from "./Carousel";
+import Button from "../common/Button";
 
 export default function AppOverview({ data }) {
   return (
@@ -21,9 +22,10 @@ export default function AppOverview({ data }) {
               ))}
             </ul>
           </div>
-          <a className={styles.linkToApp} href={data.link}>
-            <label>App is hosted on Netlify</label>
-            <Icon type="home" />
+          <a className={styles.center} href={data.link}>
+            <Button Icon={<Icon type="home" />} mode="filled" size="big">
+              App is hosted on Netlify
+            </Button>
           </a>
         </div>
         <div className={styles.carouselWrapper}>

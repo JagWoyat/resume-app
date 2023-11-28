@@ -1,0 +1,64 @@
+.button-component {
+    display: inline-block;
+    border: none;
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .icon-button-component {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .big-button-component {
+    margin: 0.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+
+  .small-button-component {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+  }
+
+
+  
+  .filled-button-component {
+    background: linear-gradient(#7fa1f7, #6085e4);
+    color: #030a1b;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .filled-button-component:hover {
+    background: linear-gradient(#89a9fb, #6890f6);
+  }
+  
+  .filled-button-component:disabled {
+    background: #a3a9b7;
+    color: #3a445c;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  .outline-button-component {
+    border: 1px solid #2658d6;
+    color: #2658d6;
+  }
+  
+  .outline-button-component:hover {
+    background: #cbd8fc;
+  }
+  
+  .text-button-component {
+    color: #2658d6;
+  }
+  
+  .text-button-component:hover {
+    background: #cbd8fc;
+  }

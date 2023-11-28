@@ -44,11 +44,7 @@
     text-align: center;
 }
 
-.linkToApp {
-    display: inline-block;
-    background-color: aliceblue;
-    margin: 0.5rem;
-    padding: 1rem;
-    width: 75%;
-    border-radius: 10px 30px 30px 10px;
+.center {
+    display: flex;
+    justify-content: center;
 }
