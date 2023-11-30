@@ -1,7 +1,7 @@
 .wrapper {
   display: block;
   position: fixed;
-  background-color: #1e2126;
+  background-color: var(--primary-background-color);
   top: 0px;
   left: 0px;
   display: flex;
@@ -10,6 +10,8 @@
   align-items: center;
   width: var(--sidebar-width);
   height: 100%;
+  border-right: 1px solid;
+  border-color: var(--primary-color);
 }
 
 /* @media (max-width: 750px) {
@@ -30,7 +32,7 @@
 
 nav h2 {
     font-weight: 500;
-    color: #a1aebd;
+    color: var(--primary-color);
 }
 
 

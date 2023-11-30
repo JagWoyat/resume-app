@@ -5,6 +5,8 @@
 
 :root{
     --sidebar-width: 20rem;
+    --primary-color: #a1aebd;
+    --primary-background-color: #1e2126;
 }
 
 body {

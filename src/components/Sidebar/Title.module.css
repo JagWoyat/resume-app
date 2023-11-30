@@ -6,13 +6,12 @@
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    color: #a1aebd;
+    color: var(--primary-color);
   
   }
 
   .buttonIcon {
     display: inline-block;
-    color: #a1aebd;
     width: 2.5rem;
     height: 2.5rem;
   }
