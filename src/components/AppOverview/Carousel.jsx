@@ -30,7 +30,12 @@ export default function Carousel({ items }) {
           {items.map((item) => {
             return (
               <div className={styles.carousel_item} style={{ width: "100%" }}>
-                <img className={styles.carousel_img} src={item.icon} />
+                <img
+                  className={styles.carousel_img}
+                  src={item.icon}
+                  width="600px"
+                  height="400px"
+                />
               </div>
             );
           })}
