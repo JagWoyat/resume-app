@@ -1,5 +1,3 @@
-import image from "../assets/crypto-app-screen.jpg"
-
 export function generateImages(amount, chunks){
     let images = [[]];
     const size = amount/chunks

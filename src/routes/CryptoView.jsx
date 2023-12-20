@@ -2,6 +2,10 @@ import AppOverview from "../components/AppOverview/AppOverview";
 import bg from "../assets/maxim-hopman-fiXLQXAhCfk-unsplash.jpg";
 import Background from "../components/common/Background";
 
+import crypto1 from "../assets/crypto-app1.png";
+import crypto2 from "../assets/crypto-app2.png";
+import crypto3 from "../assets/crypto-app3.png";
+
 const data = {
   name: "Cryptocurrency App",
   description: (
@@ -17,6 +21,20 @@ const data = {
   ),
   tools: ["React", "TypeScript", "React Router", "Styled Components", "Redux"],
   link: "https://elegant-dasik-a33ddd.netlify.app/",
+  items: [
+    {
+      title: "1",
+      icon: crypto1,
+    },
+    {
+      title: "2",
+      icon: crypto2,
+    },
+    {
+      title: "3",
+      icon: crypto3,
+    },
+  ],
 };
 
 export default function CryptoView() {

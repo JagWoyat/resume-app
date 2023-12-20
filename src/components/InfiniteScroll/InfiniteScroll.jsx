@@ -186,20 +186,22 @@ export default function InfiniteScroll() {
                 changeImage={changeImage}
                 handleChange={handleChange}
               />
-              <img
-                className={`${styles.imageModal} ${
-                  (changeImage === "left" || changeImage === "right") &&
-                  styles.slide
-                }`}
-                src={imagesArr[chosenImage.outer][chosenImage.inner].src}
-                style={
-                  changeImage === "right"
-                    ? { opacity: 0, translate: "-100%" }
-                    : changeImage === "left"
-                    ? { opacity: 0, translate: "100%" }
-                    : { opacity: 1, translate: "0" }
-                }
-              />
+              <div className={styles.imageWrapper}>
+                <img
+                  className={`${styles.imageModal} ${
+                    (changeImage === "left" || changeImage === "right") &&
+                    styles.slide
+                  }`}
+                  src={imagesArr[chosenImage.outer][chosenImage.inner].src}
+                  style={
+                    changeImage === "right"
+                      ? { opacity: 0, translate: "-100%" }
+                      : changeImage === "left"
+                      ? { opacity: 0, translate: "100%" }
+                      : { opacity: 1, translate: "0" }
+                  }
+                />
+              </div>
               <BorderImage
                 shift={1}
                 image={chosenImage}

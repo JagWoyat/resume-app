@@ -1,23 +1,8 @@
 import { useState } from "react";
 import styles from "./Carousel.module.css";
-import icon from "../../assets/crypto-app-screen.jpg";
 
-export default function Carousel() {
+export default function Carousel({ items }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const items = [
-    {
-      title: "1",
-      icon: "./crypto-app-screen.jpg",
-    },
-    {
-      title: "2",
-      icon: "./crypto-app-screen.jpg",
-    },
-    {
-      title: "3",
-      icon: "./crypto-app-screen.jpg",
-    },
-  ];
   function updateIndex(newIndex) {
     if (newIndex < 0) {
       newIndex = items.length - 1;
@@ -45,7 +30,7 @@ export default function Carousel() {
           {items.map((item) => {
             return (
               <div className={styles.carousel_item} style={{ width: "100%" }}>
-                <img className={styles.carousel_img} src={icon} />
+                <img className={styles.carousel_img} src={item.icon} />
               </div>
             );
           })}

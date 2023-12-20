@@ -28,7 +28,7 @@ export default function AppOverview({ data }) {
           </a>
         </div>
         <div className={styles.carouselWrapper}>
-          <Carousel />
+          <Carousel items={data.items} />
         </div>
       </div>
     </section>
