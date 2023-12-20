@@ -1,4 +1,3 @@
-import React from "react";
 import Icon from "../common/Icon";
 import styles from "./AppOverview.module.css";
 import Carousel from "./Carousel";
@@ -12,7 +11,7 @@ export default function AppOverview({ data }) {
     >
       <h3>{data.name}</h3>
       <div className={styles.mainWrapper}>
-        <div>
+        <div className={styles.descriptionWrapper}>
           {data.description}
           <div>
             <h4>App was build with these tools:</h4>

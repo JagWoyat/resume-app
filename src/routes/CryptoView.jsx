@@ -1,4 +1,3 @@
-import React from "react";
 import AppOverview from "../components/AppOverview/AppOverview";
 import bg from "../assets/maxim-hopman-fiXLQXAhCfk-unsplash.jpg";
 import Background from "../components/common/Background";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Carousel.module.css";
 import icon from "../../assets/crypto-app-screen.jpg";
 
@@ -6,21 +6,15 @@ export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const items = [
     {
-      title: "Baseball",
-      description:
-        "Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding. The game occurs over the course of several plays, with each play generally beginning when a player on the fielding team, called the pitcher.",
+      title: "1",
       icon: "./crypto-app-screen.jpg",
     },
     {
-      title: "Walking",
-      description:
-        "Walking (also known as ambulation) is one of the main gaits of terrestrial locomotion among legged animals. Walking is typically slower than running and other gaits. ",
+      title: "2",
       icon: "./crypto-app-screen.jpg",
     },
     {
-      title: "Weights",
-      description:
-        "Weightlifting generally refers to activities in which people lift weights, often in the form of dumbbells or barbells. People lift various kinds of weights for a variety of different reasons.",
+      title: "3",
       icon: "./crypto-app-screen.jpg",
     },
   ];
@@ -50,7 +44,7 @@ export default function Carousel() {
         >
           {items.map((item) => {
             return (
-              <div className={styles.carousel_item} style={{ width: "600px" }}>
+              <div className={styles.carousel_item} style={{ width: "100%" }}>
                 <img className={styles.carousel_img} src={icon} />
               </div>
             );

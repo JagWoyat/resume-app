@@ -1,4 +1,3 @@
-import React from "react";
 import AppOverview from "../components/AppOverview/AppOverview";
 import bg from "../assets/wolfgang-hasselmann-bR_-gllg7Bs-unsplash.jpg";
 import Background from "../components/common/Background";
@@ -17,7 +16,7 @@ const data = {
     </p>
   ),
   tools: ["React", "React Router", "Redux"],
-  link: "https://elegant-dasik-a33ddd.netlify.app/",
+  link: "https://wondrous-mochi-33061b.netlify.app/",
 };
 
 export default function WeatherView() {

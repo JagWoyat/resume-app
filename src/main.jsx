@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import Main from "./routes/Main/Main";
 import WeatherView from "./routes/WeatherView";
+import ScrollView from "./routes/ScrollView";
 
 // import Posts, { loader as postsLoader } from './routes/Posts';
 // import NewPost, { action as newPostAction } from './routes/NewPost';
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: "/weather-app",
         element: <WeatherView />,
+        // loader: postsLoader,
+      },
+      {
+        path: "/scroll",
+        element: <ScrollView />,
         // loader: postsLoader,
       },
     ],

@@ -1,8 +1,8 @@
 .carousel {
   position: relative;
   overflow: hidden;
-  width: 600px;
-  height: 400px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .inner {
@@ -16,7 +16,8 @@
 }
 
 .carousel_img {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .left {

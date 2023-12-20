@@ -5,10 +5,16 @@ main {
     align-items: center;
 }
 
-.introductionWrapper{
-    height: 500px;
+.mainTitle {
+    font-size: 2rem;
 }
 
-.descriptionWrapper {
-    height: 500px;
+.introductionWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    font-size: 1.25rem;
 }

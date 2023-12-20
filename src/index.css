@@ -5,6 +5,7 @@
 
 :root{
     --sidebar-width: 20rem;
+    --navbar-height: 5rem;
     --primary-color: #a1aebd;
     --primary-background-color: #1e2126;
 }
@@ -15,8 +16,19 @@ body {
     color: #a1aebd;
 }
 
+@media (max-width: 1000px){
+    body {
+        padding-left: 0;
+        padding-top: var(--navbar-height);
+    }
+}
+
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#modal {
+    display: flex;
 }

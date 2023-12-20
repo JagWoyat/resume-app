@@ -1,15 +1,13 @@
-import React from "react";
 import styles from "./Main.module.css";
 
 export default function Main() {
   return (
-    <main>
+    <div>
       <section className={styles.introductionWrapper}>
-        <h3>Resume App</h3>
+        <h3 className={styles.mainTitle}>
+          Resume App <span>(in progress)</span>
+        </h3>
       </section>
-      <section className={styles.descriptionWrapper}>
-        <h3>Description</h3>
-      </section>
-    </main>
+    </div>
   );
 }

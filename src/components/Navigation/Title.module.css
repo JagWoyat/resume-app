@@ -1,13 +1,10 @@
 .nameWrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
-    /* margin-left: 2rem; */
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
     color: var(--primary-color);
-  
   }
 
   .buttonIcon {
