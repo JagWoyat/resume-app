@@ -1,5 +1,6 @@
 import AppOverview from "../components/AppOverview/AppOverview";
 import bg from "../assets/maxim-hopman-fiXLQXAhCfk-unsplash.jpg";
+import placeholder from "../assets/crypto-placeholder.jpg";
 import Background from "../components/common/Background";
 
 import crypto1 from "../assets/crypto-app1.png";
@@ -40,7 +41,7 @@ const data = {
 export default function CryptoView() {
   return (
     <main>
-      <Background background={bg} />
+      <Background placeholder={placeholder} background={bg} />
       <AppOverview data={data} />
     </main>
   );

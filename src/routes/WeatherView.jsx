@@ -1,5 +1,6 @@
 import AppOverview from "../components/AppOverview/AppOverview";
 import bg from "../assets/wolfgang-hasselmann-bR_-gllg7Bs-unsplash.jpg";
+import placeholder from "../assets/weather-placeholder.jpg";
 import Background from "../components/common/Background";
 
 import weather1 from "../assets/weather-app1.png";
@@ -38,7 +39,7 @@ const data = {
 export default function WeatherView() {
   return (
     <main>
-      <Background background={bg} />
+      <Background placeholder={placeholder} background={bg} />
       <AppOverview data={data} />
     </main>
   );
