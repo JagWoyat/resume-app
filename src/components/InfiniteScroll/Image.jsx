@@ -1,25 +1,28 @@
 import { useState } from "react";
 import styles from "./Image.module.css";
 
-export default function Image({ ...props }) {
+export default function Image({ width, height, ...props }) {
   const [status, setStatus] = useState("loading");
 
   return (
     <>
-      <div>
-        <div className={styles.placeholder} />
-        <img
-          loading="lazy"
-          onLoad={() => setStatus("loaded")}
-          onError={() => setStatus("failed")}
-          style={
-            status === "loading"
-              ? { opacity: 0, transition: "opacity 1s ease-out" }
-              : { opacity: 1, transition: "opacity 1s ease-out" }
-          }
-          {...props}
-        />
-      </div>
+      <div
+        style={{ width: width, height: height, margin: "0.5rem" }}
+        className={styles.placeholder}
+      />
+      <img
+        loading="lazy"
+        onLoad={() => setStatus("loaded")}
+        onError={() => setStatus("failed")}
+        style={
+          status === "loading"
+            ? { opacity: 0, transition: "opacity 0.5s ease-out" }
+            : { opacity: 1, transition: "opacity 0.5s ease-out" }
+        }
+        width={width}
+        height={height}
+        {...props}
+      />
     </>
   );
 }

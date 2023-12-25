@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Carousel.module.css";
+import Image from "../InfiniteScroll/Image";
 
 export default function Carousel({ items }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -30,7 +31,7 @@ export default function Carousel({ items }) {
           {items.map((item) => {
             return (
               <div className={styles.carousel_item} style={{ width: "100%" }}>
-                <img
+                <Image
                   className={styles.carousel_img}
                   src={item.icon}
                   width="600px"
