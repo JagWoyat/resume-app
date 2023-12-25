@@ -17,7 +17,7 @@ export default function AppOverview({ data }) {
             <h4>App was build with these tools:</h4>
             <ul>
               {data.tools.map((item) => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>

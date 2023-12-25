@@ -4,6 +4,7 @@ import { generateImages } from "../../util/infiniteScroll";
 import styles from "./InfiniteScroll.module.css";
 import Image from "./Image";
 import Modal from "../common/Modal";
+import React from "react";
 
 const IMAGE_COUNT = 120;
 const CHUNK_COUNT = IMAGE_COUNT / 30;
@@ -220,7 +221,7 @@ export default function InfiniteScroll() {
           const outerIndex = imagesArr.indexOf(imageSet);
           const display = outerIndex <= loadedChunk;
           return (
-            <>
+            <React.Fragment key={outerIndex}>
               {display && (
                 <>
                   {imageSet.map((image) => {
@@ -239,7 +240,7 @@ export default function InfiniteScroll() {
                   })}
                 </>
               )}
-            </>
+            </React.Fragment>
           );
         })}
       </ul>

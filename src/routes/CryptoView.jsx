@@ -24,15 +24,15 @@ const data = {
   link: "https://elegant-dasik-a33ddd.netlify.app/",
   items: [
     {
-      title: "1",
+      id: "1",
       icon: crypto1,
     },
     {
-      title: "2",
+      id: "2",
       icon: crypto2,
     },
     {
-      title: "3",
+      id: "3",
       icon: crypto3,
     },
   ],

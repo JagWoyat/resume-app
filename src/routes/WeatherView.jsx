@@ -22,15 +22,15 @@ const data = {
   link: "https://wondrous-mochi-33061b.netlify.app/",
   items: [
     {
-      title: "1",
+      id: "1",
       icon: weather1,
     },
     {
-      title: "2",
+      id: "2",
       icon: weather2,
     },
     {
-      title: "3",
+      id: "3",
       icon: weather3,
     },
   ],
