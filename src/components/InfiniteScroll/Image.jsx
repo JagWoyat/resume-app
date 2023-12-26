@@ -7,8 +7,10 @@ export default function Image({ width, height, ...props }) {
   return (
     <>
       <div
-        style={{ width: width, height: height, margin: "0.5rem" }}
+        style={{ width: "100%", height: height, margin: "0.5rem" }}
         className={styles.placeholder}
+        width={width}
+        height={height}
       />
       <img
         loading="lazy"
