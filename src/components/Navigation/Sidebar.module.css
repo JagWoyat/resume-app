@@ -24,7 +24,6 @@
   width: 80vw;
   /* left: -100%; */
   z-index: 100;
-  translate: -100%;
   transition: translate 0.3s;
 }
 
