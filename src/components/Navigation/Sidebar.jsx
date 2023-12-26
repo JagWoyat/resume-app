@@ -37,11 +37,13 @@ export default function Sidebar() {
           <header className={styles.headerSmall}>
             <div className={styles.navbarFlex}>
               <Title />
-              <Button
-                Icon={<Icon className={styles.buttonIcon} src={icon} />}
+              <button
+                // Icon={<Icon className={styles.buttonIcon} src={icon} />}
                 onClick={handleClick}
                 className={styles.sidebarOpen}
-              />
+              >
+                <Icon className={styles.buttonIcon} src={icon} />
+              </button>
             </div>
           </header>
           <nav
