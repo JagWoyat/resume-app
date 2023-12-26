@@ -47,7 +47,7 @@ export default function Sidebar() {
             </div>
           </header>
           <nav
-            style={openNav ? { translate: "0" } : { translate: "-100%" }}
+            // style={openNav ? { translate: "0" } : { translate: "-100%" }}
             className={`${styles.wrapper} ${styles.wrapperSmall}`}
           >
             <NavLink
