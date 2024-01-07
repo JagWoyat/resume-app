@@ -1,4 +1,5 @@
 import styles from "./Main.module.css";
+import certificate from "../../assets/react-udemy-cert.jpg";
 
 export default function Main() {
   return (
@@ -9,11 +10,8 @@ export default function Main() {
         </h3>
         <p>I'm an aspiring web developer with focus on React.</p>
         <p>You can find some of my projects on the sidebar</p>
-        <h4>
-          I'm currently going over React's basics and learing more advanced
-          concepts with this course:
-        </h4>
-        <a href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/">
+        <img src={certificate} alt="React Udemy Certificate" />
+        <a href="https://ude.my/UC-55664585-7154-45f4-b636-740d9a9e89b3">
           <strong>
             React - The Complete Guide 2023 (incl. React Router & Redux)
           </strong>

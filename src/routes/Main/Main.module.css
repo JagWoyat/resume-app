@@ -12,9 +12,38 @@ main {
 .introductionWrapper{
     display: flex;
     justify-content: center;
+    /* width: 50%; */
     align-items: center;
+    text-align: center;
     flex-direction: column;
     gap: 1rem;
     height: 100vh;
     font-size: 1.25rem;
+}
+
+.introductionWrapper img{
+    min-height: 200px;
+    max-height: 50%;
+    max-width: 90%;
+}
+
+.introductionWrapper a {
+   text-decoration: none;
+}
+
+.introductionWrapper a:link {
+    color: var(--primary-color);
+}
+
+.introductionWrapper a:visited {
+    color: var(--primary-color);
+}
+
+.introductionWrapper a:focus,
+.introductionWrapper a:hover {
+    text-decoration:underline; 
+}
+
+.introductionWrapper a:active {
+    color: red;
 }

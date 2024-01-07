@@ -20,16 +20,6 @@ h3 {
     /* max-width: 800px; */
 }
 
-@media (max-width: 1000px) {
-    .mainWrapper{
-        flex-direction: column;
-        justify-content: center;
-    }
-    .sectionWrapper {
-        margin-top: 8rem;
-    }
-}
-
 .sectionWrapper a {
     text-decoration: none;
     color: var(--primary-color);
@@ -68,3 +58,20 @@ h3 {
     max-width: 400px;
     width: 60%;
 }
+
+@media (max-width: 1000px) {
+    .mainWrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .sectionWrapper {
+        margin-top: 8rem;
+        align-items: center;
+    }
+    .descriptionWrapper{
+        width: 100%;
+    }
+}
+
