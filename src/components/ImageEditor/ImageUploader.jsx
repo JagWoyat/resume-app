@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ImageUploader.module.css";
 
-// const API_URL = "/api/image?";
-const API_URL = "http://localhost:4000/image";
+const API_URL = "/api/image?";
+// const API_URL = "http://localhost:4000/image";
 
 export default function ImageUploader({ title, request }) {
   const [image, setImage] = useState();
@@ -124,7 +124,7 @@ export default function ImageUploader({ title, request }) {
 
   return (
     <div className={styles.UploaderWrapper}>
-      <p>
+      <div>
         <h1>{title}</h1>
         <a
           target="_blank"
@@ -132,7 +132,7 @@ export default function ImageUploader({ title, request }) {
         >
           Backend Github page
         </a>
-      </p>
+      </div>
 
       {imagePreview ? (
         <form

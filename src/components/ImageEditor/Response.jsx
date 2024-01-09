@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import styles from "./ImageUploader.module.css";
 import classes from "./ImageEditor.module.css";
 
-// const API_URL = "/api/image/";
-const API_URL = "http://localhost:4000/image/";
+const API_URL = "/api/image/";
+// const API_URL = "http://localhost:4000/image/";
 
 export default function Response() {
   const [image, setImage] = useState();
