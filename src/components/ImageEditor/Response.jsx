@@ -13,7 +13,7 @@ export default function Response() {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await axios.get(API_URL + params.path, {
+        const response = await axios.get(API_URL + params.path + "?", {
           responseType: "arraybuffer",
         });
 

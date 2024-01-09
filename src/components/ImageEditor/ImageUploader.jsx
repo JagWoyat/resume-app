@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ImageUploader.module.css";
 
-const API_URL = "/api/image";
+const API_URL = "/api/image?";
 
 export default function ImageUploader({ title, request }) {
   const [image, setImage] = useState();
