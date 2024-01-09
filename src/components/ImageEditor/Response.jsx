@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-const API_URL = "http://98.71.35.179:4000/image/";
+const API_URL = "/api/";
 
 export default function Response() {
   const [image, setImage] = useState();

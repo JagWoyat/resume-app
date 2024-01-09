@@ -1,0 +1,2 @@
+/api/* http://98.71.35.179:4000/image/:splat 200
+/* /index.html 200
