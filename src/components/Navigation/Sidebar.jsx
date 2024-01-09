@@ -80,6 +80,18 @@ export default function Sidebar() {
                   ? styles.routeLinkActive
                   : styles.routeLink
               }
+              to="/image-editor"
+            >
+              <h2>Image Editor with Go</h2>
+            </NavLink>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? styles.routeLinkPending
+                  : isActive
+                  ? styles.routeLinkActive
+                  : styles.routeLink
+              }
               to="/scroll"
             >
               <h2>Image Viewer</h2>
@@ -116,6 +128,18 @@ export default function Sidebar() {
               to="/crypto-app"
             >
               <h2>Cryptocurrency App</h2>
+            </NavLink>
+            <NavLink
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? styles.routeLinkPending
+                  : isActive
+                  ? styles.routeLinkActive
+                  : styles.routeLink
+              }
+              to="/image-editor"
+            >
+              <h2>Image Editor with Go</h2>
             </NavLink>
             <NavLink
               className={({ isActive, isPending }) =>

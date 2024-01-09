@@ -7,16 +7,32 @@ import "./index.css";
 import Main from "./routes/Main/Main";
 import WeatherView from "./routes/WeatherView";
 import ScrollView from "./routes/ScrollView";
+import ImageEditorView from "./routes/ImageEditorView";
+import ErrorPage from "./routes/ErrorPage";
+import ImageEditedView from "./routes/ImageEditedView";
 
 // import Posts, { loader as postsLoader } from './routes/Posts';
 // import NewPost, { action as newPostAction } from './routes/NewPost';
 // import PostDetails, { loader as postDetailsLoader } from './routes/PostDetails';
 // import RootLayout from './routes/RootLayout';
 
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//     errorElement: <ErrorPage />,
+//   },
+//   {
+//     path: "response/:filename",
+//     element: <Response />,
+//   },
+// ]);
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -25,22 +41,22 @@ const router = createBrowserRouter([
       {
         path: "/crypto-app",
         element: <CryptoView />,
-        // loader: postsLoader,
-        // children: [
-        //   { path: "/crypto-app", element: <Favorites /> },
-        //   { path: '/create-post', element: <NewPost />, action: newPostAction },
-        //   { path: '/:postId', element: <PostDetails />, loader: postDetailsLoader }
-        // ],
       },
       {
         path: "/weather-app",
         element: <WeatherView />,
-        // loader: postsLoader,
+      },
+      {
+        path: "/image-editor",
+        element: <ImageEditorView />,
+      },
+      {
+        path: "/image-editor/:path",
+        element: <ImageEditedView />,
       },
       {
         path: "/scroll",
         element: <ScrollView />,
-        // loader: postsLoader,
       },
     ],
   },
