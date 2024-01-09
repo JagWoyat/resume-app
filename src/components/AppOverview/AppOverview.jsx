@@ -21,8 +21,13 @@ export default function AppOverview({ data }) {
               ))}
             </ul>
           </div>
-          <a className={styles.center} href={data.link}>
-            <Button Icon={<Icon type="home" />} mode="filled" size="big">
+          <a target="_blank" className={styles.center} href={data.link}>
+            <Button
+              target="_blank"
+              Icon={<Icon type="home" />}
+              mode="filled"
+              size="big"
+            >
               App is hosted on Netlify
             </Button>
           </a>

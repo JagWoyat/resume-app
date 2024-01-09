@@ -11,7 +11,10 @@ export default function Main() {
         <p>I'm an aspiring web developer with focus on React.</p>
         <p>You can find some of my projects on the sidebar</p>
         <img src={certificate} alt="React Udemy Certificate" />
-        <a href="https://ude.my/UC-55664585-7154-45f4-b636-740d9a9e89b3">
+        <a
+          target="_blank"
+          href="https://ude.my/UC-55664585-7154-45f4-b636-740d9a9e89b3"
+        >
           <strong>
             React - The Complete Guide 2023 (incl. React Router & Redux)
           </strong>
