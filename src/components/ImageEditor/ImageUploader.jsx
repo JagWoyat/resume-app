@@ -8,13 +8,13 @@ export default function ImageUploader({ title, request }) {
   const [image, setImage] = useState();
   const [imagePreview, setImagePreview] = useState(null);
   const [dragActive, setDragActive] = useState(false);
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
-  const mirHorRef = useRef();
-  const mirVerRef = useRef();
-  const grayscaleRef = useRef();
-  const heightRef = useRef();
-  const widthRef = useRef();
+  const mirHorRef = useRef(null);
+  const mirVerRef = useRef(null);
+  const grayscaleRef = useRef(null);
+  const heightRef = useRef(null);
+  const widthRef = useRef(null);
 
   const [resize, setResize] = useState(false);
 
@@ -73,20 +73,28 @@ export default function ImageUploader({ title, request }) {
 
     let formData = new FormData();
 
-    const mirHor = mirHorRef.current.checked;
-    const mirVer = mirVerRef.current.checked;
-    const grayscale = grayscaleRef.current.checked;
-    const height = parseInt(heightRef.current.value, 10);
-    const width = parseInt(widthRef.current.value, 10);
-
     if (!image) return;
     formData.append("image", image);
     formData.append("name", "random-name");
-    formData.append("mirrored_h", mirHor);
-    formData.append("mirrored_v", mirVer);
-    formData.append("height", height);
-    formData.append("width", width);
-    formData.append("grayscale", grayscale);
+
+    if (mirHorRef) {
+      const mirHor = mirHorRef.current.checked;
+      formData.append("mirrored_h", mirHor);
+    }
+    if (mirVerRef) {
+      const mirVer = mirVerRef.current.checked;
+      formData.append("mirrored_v", mirVer);
+    }
+    if (grayscaleRef) {
+      const grayscale = grayscaleRef.current.checked;
+      formData.append("grayscale", grayscale);
+    }
+    if (resize) {
+      const height = parseInt(heightRef.current.value, 10);
+      const width = parseInt(widthRef.current.value, 10);
+      formData.append("height", height);
+      formData.append("width", width);
+    }
 
     // console.log(formData);
     const url = API_URL;
