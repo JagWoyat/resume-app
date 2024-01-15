@@ -7,10 +7,10 @@ function App() {
 
   return (
     <>
-      <div className={styles.Wrapper}>
+      <main className={styles.Wrapper}>
         <ImageUploader title="Upload image" request={setRequestState} />
         {requestState === "loading" && <h3>Loading...</h3>}
-      </div>
+      </main>
     </>
   );
 }

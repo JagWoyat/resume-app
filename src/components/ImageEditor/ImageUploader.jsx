@@ -123,7 +123,7 @@ export default function ImageUploader({ title, request }) {
   };
 
   return (
-    <div className={styles.UploaderWrapper}>
+    <section className={styles.UploaderWrapper}>
       <div>
         <h1>{title}</h1>
         <a
@@ -234,7 +234,8 @@ export default function ImageUploader({ title, request }) {
           )}
         </form>
       )}
-    </div>
+    </section>
+
     // <div>
     //   <h1>{title}</h1>
     //   <form onSubmit={handleSubmit}>
