@@ -152,11 +152,11 @@ export default function ImageUploader({ title, request }) {
             <legend>Modifiers</legend>
             <label>
               <input type="checkbox" ref={mirHorRef} />
-              Mirrored horizontally
+              Mirror horizontally
             </label>
             <label>
               <input type="checkbox" ref={mirVerRef} />
-              Mirrored vertically
+              Mirror vertically
             </label>
             <label>
               <input type="checkbox" ref={grayscaleRef} />

@@ -8,6 +8,25 @@ import Icon from "../common/Icon";
 
 const WIDTH_BREAKPOINT = 1000;
 
+const NAV_ITEMS = [
+  {
+    title: "Weather App",
+    link: "/weather-app",
+  },
+  {
+    title: "Cryptocurrency App",
+    link: "/crypto-app",
+  },
+  {
+    title: "Image Editor with Go",
+    link: "/image-editor",
+  },
+  {
+    title: "Image Viewer",
+    link: "/scroll",
+  },
+];
+
 export default function Sidebar() {
   const [smallScreen, setSmallScreen] = useState(false);
   const [openNav, setOpenNav] = useState(false);
@@ -30,6 +49,25 @@ export default function Sidebar() {
     });
   }
 
+  const navContent = (
+    <>
+      {NAV_ITEMS.map((item) => (
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? styles.routeLinkPending
+              : isActive
+              ? styles.routeLinkActive
+              : styles.routeLink
+          }
+          to={item.link}
+        >
+          <h2>{item.title}</h2>
+        </NavLink>
+      ))}
+    </>
+  );
+
   return (
     <>
       {smallScreen ? (
@@ -48,54 +86,7 @@ export default function Sidebar() {
             style={openNav ? { translate: "0" } : { translate: "-100%" }}
             className={`${styles.wrapper} ${styles.wrapperSmall}`}
           >
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/weather-app"
-            >
-              <h2>Weather App</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/crypto-app"
-            >
-              <h2>Cryptocurrency App</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/image-editor"
-            >
-              <h2>Image Editor with Go</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/scroll"
-            >
-              <h2>Image Viewer</h2>
-            </NavLink>
+            {navContent}
           </nav>
         </>
       ) : (
@@ -104,56 +95,7 @@ export default function Sidebar() {
             <Title />
             <hr />
           </div>
-          <nav>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/weather-app"
-            >
-              <h2>Weather App</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/crypto-app"
-            >
-              <h2>Cryptocurrency App</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/image-editor"
-            >
-              <h2>Image Editor with Go</h2>
-            </NavLink>
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? styles.routeLinkPending
-                  : isActive
-                  ? styles.routeLinkActive
-                  : styles.routeLink
-              }
-              to="/scroll"
-            >
-              <h2>Image Viewer</h2>
-            </NavLink>
-          </nav>
+          <nav>{navContent}</nav>
         </header>
       )}
     </>
