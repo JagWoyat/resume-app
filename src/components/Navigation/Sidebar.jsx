@@ -61,6 +61,7 @@ export default function Sidebar() {
               : styles.routeLink
           }
           to={item.link}
+          key={item.link}
         >
           <h2>{item.title}</h2>
         </NavLink>
