@@ -51,6 +51,8 @@
     user-select: none;
 }
 
+
+
 .modalWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -63,7 +65,7 @@
 .exitModal {
   position: absolute;
   top: 25%;
-  left: 80%;
+  left: 75%;
   z-index: 100;
   background-color: rgba(33, 33, 33, 0.5);
   color: white;
@@ -116,4 +118,19 @@
 .button:hover,
 .button:focus {
   background-color: #a0a0a0;
+}
+
+@media (max-width: 1000px) {
+  .imageModal {
+    width: 200%;
+  }
+  .left {
+    left: 5%;
+  }
+  .right {
+    right: 5%;
+  } 
+  .exitModal{
+    left: 85%;
+  }
 }
