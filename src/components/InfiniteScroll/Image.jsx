@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styles from "./Image.module.css";
 
-export default function Image({ width, height, ...props }) {
+export default function Image({ width, height, hover = false, ...props }) {
   const [status, setStatus] = useState("loading");
 
   return (
     <>
       <div
-        style={{ width: "100%", height: height, margin: "0.5rem" }}
-        className={styles.placeholder}
+        style={{ width: "100%", height: height }}
+        className={`${styles.placeholder} ${hover && styles.hover}`}
         width={width}
         height={height}
       />

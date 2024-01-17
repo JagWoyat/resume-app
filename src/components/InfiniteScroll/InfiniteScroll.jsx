@@ -232,6 +232,7 @@ export default function InfiniteScroll() {
                           onClick={() => handleClick(outerIndex, innerIndex)}
                           className={styles.image}
                           src={image.src}
+                          hover
                           width={300}
                           height={300}
                         />
