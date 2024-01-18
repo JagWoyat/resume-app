@@ -1,9 +1,7 @@
 .nameWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     text-decoration: none;
-    font-weight: bold;
     color: var(--primary-color);
   }
 

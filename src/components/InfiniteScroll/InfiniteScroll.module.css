@@ -1,25 +1,21 @@
 .wrapper {
-    max-width: 90rem;
-    margin: 2rem auto;
-    padding: 1rem;
+  max-width: 90rem;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 .list {
-    max-width: 80rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1rem;
-    margin: 2rem auto;
-    padding: 0;
-    list-style: none;
+  max-width: 80rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 2rem auto;
+  list-style: none;
 }
 
 .item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
+  position: relative;
+}
 
 .imageWrapper {
   display: flex;
@@ -28,12 +24,12 @@
 }
 
 .imageModal {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    /* height: 100%; */
-    user-select: none;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  /* height: 100%; */
+  user-select: none;
 }
 
 .modalWrapper {

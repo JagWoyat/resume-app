@@ -1,5 +1,4 @@
 .wrapper {
-  display: block;
   position: fixed;
   background-color: var(--primary-background-color);
   display: flex;

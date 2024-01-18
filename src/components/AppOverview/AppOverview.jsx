@@ -32,9 +32,7 @@ export default function AppOverview({ data }) {
             </Button>
           </a>
         </div>
-        <div className={styles.carouselWrapper}>
-          <Carousel items={data.items} />
-        </div>
+        <Carousel items={data.items} />
       </div>
     </section>
   );
