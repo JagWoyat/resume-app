@@ -21,21 +21,6 @@
     flex-direction: column;
   }
 
-.image {
-    width: 100%;
-    height: 300px;
-    user-select: none;
-    margin: 0.5rem;
-    object-fit: cover;
-}
-
-.image:hover,
-.image:focus {
-  width: calc(100% + 0.5rem);
-  height: calc(300px + 0.5rem);
-  margin: 0.25rem;
-}
-
 .imageWrapper {
   display: flex;
   height: 100%;
@@ -50,8 +35,6 @@
     /* height: 100%; */
     user-select: none;
 }
-
-
 
 .modalWrapper {
   display: grid;

@@ -10,3 +10,20 @@
 .hover {
     margin: 0.5rem;
 }
+
+.image {
+    width: 100%;
+}
+
+.imageHover {
+    user-select: none;
+    margin: 0.5rem;
+    object-fit: cover;
+}
+
+.imageHover:hover,
+.imageHover:focus {
+  width: calc(100% + 0.5rem);
+  height: calc(300px + 0.5rem);
+  margin: 0.25rem;
+}
