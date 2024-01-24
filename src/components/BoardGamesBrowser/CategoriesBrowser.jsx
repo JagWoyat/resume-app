@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const HeadTitles = ["Name", "Board Game Count"];
 
+const API_URL = "/api";
+
 export default function CategoriesBrowser() {
   const [categories, setCategories] = useState(null);
 
@@ -11,7 +13,7 @@ export default function CategoriesBrowser() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("http://98.71.35.179/api/Categories");
+      const res = await fetch(API_URL + "/Categories");
       if (!res.ok) {
         return;
       }

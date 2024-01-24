@@ -14,6 +14,8 @@ const HeadTitles = [
   "Designers",
 ];
 
+const API_URL = "/api";
+
 export default function BoardGamesBrowser() {
   const [boardGames, setBoardGames] = useState(null);
 
@@ -21,7 +23,7 @@ export default function BoardGamesBrowser() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("http://98.71.35.179/api/BoardGames");
+      const res = await fetch(API_URL + "/BoardGames");
       if (!res.ok) {
         return;
       }

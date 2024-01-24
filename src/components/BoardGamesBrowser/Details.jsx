@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
+const API_URL = "/api";
+
 export default function Details({ type, id }) {
   const [details, setDetails] = useState();
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch(`http://98.71.35.179/api/${type}/${id}`);
+      const res = await fetch(API_URL + `/${type}/${id}`);
       if (!res.ok) {
         return;
       }
