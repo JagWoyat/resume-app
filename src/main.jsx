@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./routes/Root/Root";
 import CryptoView from "./routes/CryptoView";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import "./index.css";
 import Main from "./routes/Main/Main";
 import WeatherView from "./routes/WeatherView";
@@ -10,23 +14,7 @@ import ScrollView from "./routes/ScrollView";
 import ImageEditorView from "./routes/ImageEditorView";
 import ErrorPage from "./routes/ErrorPage";
 import ImageEditedView from "./routes/ImageEditedView";
-
-// import Posts, { loader as postsLoader } from './routes/Posts';
-// import NewPost, { action as newPostAction } from './routes/NewPost';
-// import PostDetails, { loader as postDetailsLoader } from './routes/PostDetails';
-// import RootLayout from './routes/RootLayout';
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//     errorElement: <ErrorPage />,
-//   },
-//   {
-//     path: "response/:filename",
-//     element: <Response />,
-//   },
-// ]);
+import BoardGamesView from "./routes/BoardGamesView";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/scroll",
         element: <ScrollView />,
+      },
+      {
+        path: "/board-games",
+        element: <Navigate to="/board-games/games" />,
+      },
+      {
+        path: "/board-games/:path",
+        element: <BoardGamesView />,
       },
     ],
   },

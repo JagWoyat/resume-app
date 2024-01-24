@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Title from "./Title";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Button from "../common/Button";
 import icon from "./../../assets/Monochrome-list-icon.svg";
 import Icon from "../common/Icon";
@@ -12,24 +12,48 @@ const NAV_ITEMS = [
   {
     title: "Weather App",
     link: "/weather-app",
+    sublinks: null,
   },
   {
     title: "Cryptocurrency App",
     link: "/crypto-app",
+    sublinks: null,
   },
   {
     title: "Image Editor with Go",
     link: "/image-editor",
+    sublinks: null,
   },
   {
     title: "Image Viewer",
     link: "/scroll",
+    sublinks: null,
+  },
+  {
+    title: "Board Game Browser",
+    link: "/board-games",
+    sublinks: [
+      {
+        title: "Board Games",
+        link: "/board-games/games",
+      },
+      {
+        title: "Categories",
+        link: "/board-games/categories",
+      },
+      {
+        title: "Designers",
+        link: "/board-games/designers",
+      },
+    ],
   },
 ];
 
 export default function Sidebar() {
   const [smallScreen, setSmallScreen] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,19 +76,40 @@ export default function Sidebar() {
   const navContent = (
     <>
       {NAV_ITEMS.map((item) => (
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? styles.routeLinkPending
-              : isActive
-              ? styles.routeLinkActive
-              : styles.routeLink
-          }
-          to={item.link}
-          key={item.link}
-        >
-          <h2>{item.title}</h2>
-        </NavLink>
+        <Fragment key={item.link}>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? styles.routeLinkPending
+                : isActive
+                ? styles.routeLinkActive
+                : styles.routeLink
+            }
+            to={item.link}
+          >
+            <h2>{item.title}</h2>
+          </NavLink>
+          {item.sublinks !== null &&
+            location.pathname.startsWith("/board-games") && (
+              <>
+                {item.sublinks.map((sublink) => (
+                  <NavLink
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? styles.routeLinkPending
+                        : isActive
+                        ? styles.routeLinkActive
+                        : styles.routeLink
+                    }
+                    to={sublink.link}
+                    key={sublink.link}
+                  >
+                    <h3>{sublink.title}</h3>
+                  </NavLink>
+                ))}
+              </>
+            )}
+        </Fragment>
       ))}
     </>
   );
