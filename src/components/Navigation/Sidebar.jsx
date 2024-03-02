@@ -90,6 +90,11 @@ export default function Sidebar() {
 								: styles.routeLink
 						}
 						to={item.link}
+						onClick={() => {
+							if (item.sublinks === null) {
+								handleClick();
+							}
+						}}
 					>
 						<h2>{item.title}</h2>
 					</NavLink>
@@ -107,6 +112,7 @@ export default function Sidebar() {
 										}
 										to={sublink.link}
 										key={sublink.link}
+										onClick={handleClick}
 									>
 										<h3>{sublink.title}</h3>
 									</NavLink>
