@@ -17,7 +17,6 @@ export default function Details({ type, id }) {
 			}
 			const bgs = await res.json();
 			setDetails(bgs);
-			console.log(bgs);
 		}
 
 		fetchData();
@@ -64,7 +63,7 @@ export default function Details({ type, id }) {
 						<h3>Board Games:</h3>
 						<ul>
 							{details.boardGames.map((boardGame) => (
-								<li>{boardGame.name}</li>
+								<li key={boardGame.name}>{boardGame.name}</li>
 							))}
 						</ul>
 					</>
@@ -83,7 +82,7 @@ export default function Details({ type, id }) {
 						<h3>Board Games:</h3>
 						<ul>
 							{details.boardGames.map((boardGame) => (
-								<li>{boardGame.name}</li>
+								<li key={boardGame.name}>{boardGame.name}</li>
 							))}
 						</ul>
 					</>

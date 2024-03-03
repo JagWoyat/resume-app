@@ -93,7 +93,6 @@ nav h2 {
 	cursor: pointer;
 }
 
-.sidebarOpen:hover,
-.sidebarOpen:focus {
+.sidebarOpen:hover {
 	border: 2px solid black;
 }
