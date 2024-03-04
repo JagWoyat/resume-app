@@ -9,6 +9,7 @@ import BorderImage from "./BorderImage";
 
 const IMAGE_COUNT = 120;
 const CHUNK_COUNT = IMAGE_COUNT / 30;
+const TRANSLATE_RATE = "100%";
 
 export default function InfiniteScroll() {
 	const [imagesArr, setImagesArr] = useState([[{}]]);
@@ -106,6 +107,7 @@ export default function InfiniteScroll() {
 								imagesArr={imagesArr}
 								changeImage={changeImage}
 								handleChange={handleChange}
+								translateRate={TRANSLATE_RATE}
 							/>
 							<div className={styles.imageWrapper}>
 								<img
@@ -116,9 +118,9 @@ export default function InfiniteScroll() {
 									src={imagesArr[chosenImage.outer][chosenImage.inner].src}
 									style={
 										changeImage === "right"
-											? { opacity: 0, translate: "-100%" }
+											? { opacity: 0, translate: `-${TRANSLATE_RATE}` }
 											: changeImage === "left"
-											? { opacity: 0, translate: "100%" }
+											? { opacity: 0, translate: TRANSLATE_RATE }
 											: { opacity: 1, translate: "0" }
 									}
 								/>
@@ -130,6 +132,7 @@ export default function InfiniteScroll() {
 								imagesArr={imagesArr}
 								changeImage={changeImage}
 								handleChange={handleChange}
+								translateRate={TRANSLATE_RATE}
 							/>
 						</div>
 					</div>

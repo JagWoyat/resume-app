@@ -7,6 +7,7 @@ export default function BorderImage({
 	imagesArr,
 	changeImage,
 	handleChange,
+	translateRate,
 }) {
 	const shiftDirection = shift === 1 ? "right" : "left";
 
@@ -19,11 +20,11 @@ export default function BorderImage({
 			if (changeImage === "left") {
 				style = {
 					opacity: 1,
-					translate: "100%",
+					translate: translateRate,
 				};
 			}
 			if (changeImage === "right") {
-				style = { opacity: 1, translate: "-100%" };
+				style = { opacity: 1, translate: `-${translateRate}` };
 			}
 		}
 	} else {
