@@ -8,6 +8,7 @@ export default function BorderImage({
 	changeImage,
 	handleChange,
 	translateRate,
+	className,
 }) {
 	const shiftDirection = shift === 1 ? "right" : "left";
 
@@ -55,7 +56,7 @@ export default function BorderImage({
 				<img
 					className={`${styles.imageModal} ${
 						(changeImage === "left" || changeImage === "right") && styles.slide
-					}`}
+					} ${className}`}
 					src={borderImage}
 					style={style}
 				/>

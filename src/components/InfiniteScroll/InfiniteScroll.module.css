@@ -71,6 +71,11 @@
 	left: 25%;
 }
 
+.leftOffset {
+	position: relative;
+	left: 0;
+}
+
 .right {
 	right: 25%;
 }
@@ -99,6 +104,13 @@
 @media (max-width: 1000px) {
 	.imageModal {
 		width: 200%;
+	}
+	.slide {
+		transition: opacity 1s, translate 1s;
+	}
+	.leftOffset {
+		position: relative;
+		left: -100%;
 	}
 	.left {
 		left: 5%;

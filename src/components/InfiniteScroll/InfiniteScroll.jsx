@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { useState } from "react";
 import { generateImages } from "../../util/infiniteScroll";
 import styles from "./InfiniteScroll.module.css";
@@ -108,6 +108,7 @@ export default function InfiniteScroll() {
 								changeImage={changeImage}
 								handleChange={handleChange}
 								translateRate={TRANSLATE_RATE}
+								className={styles.leftOffset}
 							/>
 							<div className={styles.imageWrapper}>
 								<img
