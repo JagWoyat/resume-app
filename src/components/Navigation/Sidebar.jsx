@@ -30,7 +30,7 @@ const NAV_ITEMS = [
 		sublinks: null,
 	},
 	{
-		title: "Board Game Browser",
+		title: "Board Game Browser (.NET)",
 		link: "/board-games",
 		sublinks: [
 			{
