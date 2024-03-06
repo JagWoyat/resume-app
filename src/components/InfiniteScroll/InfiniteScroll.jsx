@@ -104,6 +104,7 @@ export default function InfiniteScroll() {
 								shift={-1}
 								image={chosenImage}
 								chunkSize={IMAGE_COUNT / CHUNK_COUNT}
+								chunkCount={CHUNK_COUNT}
 								imagesArr={imagesArr}
 								changeImage={changeImage}
 								handleChange={handleChange}
@@ -130,6 +131,7 @@ export default function InfiniteScroll() {
 								shift={1}
 								image={chosenImage}
 								chunkSize={IMAGE_COUNT / CHUNK_COUNT}
+								chunkCount={CHUNK_COUNT}
 								imagesArr={imagesArr}
 								changeImage={changeImage}
 								handleChange={handleChange}

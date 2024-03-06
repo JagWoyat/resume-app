@@ -4,6 +4,7 @@ export default function BorderImage({
 	shift,
 	image,
 	chunkSize,
+	chunkCount,
 	imagesArr,
 	changeImage,
 	handleChange,
@@ -37,7 +38,7 @@ export default function BorderImage({
 	if (newInnerIndex >= chunkSize) {
 		newInnerIndex = 0;
 		let newOuterIndex = image.outer + 1;
-		if (newOuterIndex < CHUNK_COUNT) {
+		if (newOuterIndex < chunkCount) {
 			borderImage = imagesArr[newOuterIndex][newInnerIndex].src;
 		}
 	} else if (newInnerIndex < 0) {
