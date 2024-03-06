@@ -63,6 +63,11 @@
 	z-index: 10;
 }
 
+.card_title:hover,
+.card_title:focus {
+	background-color: rgba(30, 33, 38, 0.7);
+}
+
 .card_title a {
 	margin-top: 1rem;
 }
