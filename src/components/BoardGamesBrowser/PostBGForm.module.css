@@ -1,0 +1,52 @@
+.section {
+	height: 100vh;
+}
+
+.tokenWrapper {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: -1;
+}
+
+.tokenWrapper p {
+	width: 200px;
+	word-wrap: break-word;
+}
+
+.section h2 {
+	color: black;
+}
+
+.responseWrapper {
+	color: black;
+}
+
+.formWrapper {
+	margin: auto;
+	padding: 2rem;
+	width: 400px;
+	box-shadow: 2px 2px 3px 3px black;
+}
+
+.formWrapper form {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+.formWrapper form * {
+	margin: 0.25rem;
+	height: 1.5rem;
+}
+
+.formWrapper form textarea {
+	resize: none;
+	height: 10rem;
+}
+
+.formWrapper form button {
+	width: 50%;
+	margin-top: 0.5rem;
+	align-self: center;
+}
