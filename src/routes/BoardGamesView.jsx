@@ -6,8 +6,8 @@ import DetailedBoardGame from "../components/BoardGamesBrowser/DetailedPages/Det
 import DetailedType from "../components/BoardGamesBrowser/DetailedPages/DetailedType";
 import { createContext, useContext } from "react";
 
-const API_URL = "/api";
-// const API_URL = "http://98.71.35.179/api";
+// const API_URL = "/api";
+const API_URL = "http://98.71.35.179/api";
 
 const BG_APIContext = createContext();
 

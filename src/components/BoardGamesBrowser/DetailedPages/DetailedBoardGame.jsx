@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { sliceWords } from "../../../util/boardGames";
 import styles from "./DetailedBoardGame.module.css";
 import { useNavigate } from "react-router-dom";
 import { useBG_APIContext } from "../../../routes/BoardGamesView";
-
-// const API_URL = "/api";
-// const API_URL = "http://98.71.35.179/api";
 
 export default function DetailedBoardGame({ type, id }) {
 	const [details, setDetails] = useState();
@@ -92,15 +89,17 @@ export default function DetailedBoardGame({ type, id }) {
 								<h3>
 									Designers:{" "}
 									{details.designers.map((designer) => (
-										<span
-											className={styles.link}
-											key={designer.name}
-											onClick={() => {
-												navigate(`/board-games/designerID${designer.id}`);
-											}}
-										>
-											{designer.name}{" "}
-										</span>
+										<Fragment key={designer.name}>
+											<span
+												className={styles.link}
+												onClick={() => {
+													navigate(`/board-games/designerID${designer.id}`);
+												}}
+											>
+												{designer.name}
+											</span>
+											<span style={{ textDecoration: "none" }}> </span>
+										</Fragment>
 									))}
 								</h3>
 							</div>
@@ -108,15 +107,17 @@ export default function DetailedBoardGame({ type, id }) {
 								<h3>
 									Categories:{" "}
 									{details.categories.map((category) => (
-										<span
-											className={styles.link}
-											key={category.name}
-											onClick={() => {
-												navigate(`/board-games/categoryID${category.id}`);
-											}}
-										>
-											{category.name}{" "}
-										</span>
+										<Fragment key={category.name}>
+											<span
+												className={styles.link}
+												onClick={() => {
+													navigate(`/board-games/categoryID${category.id}`);
+												}}
+											>
+												{category.name}
+											</span>
+											<span style={{ textDecoration: "none" }}> </span>
+										</Fragment>
 									))}
 								</h3>
 							</div>
