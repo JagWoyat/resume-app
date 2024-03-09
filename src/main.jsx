@@ -15,8 +15,6 @@ import ImageEditorView from "./routes/ImageEditorView";
 import ErrorPage from "./routes/ErrorPage";
 import ImageEditedView from "./routes/ImageEditedView";
 import BoardGamesView from "./routes/BoardGamesView";
-import Login from "./components/BoardGamesBrowser/Login";
-import UserView from "./routes/UserView";
 
 const router = createBrowserRouter([
 	{
@@ -55,14 +53,6 @@ const router = createBrowserRouter([
 			{
 				path: "/board-games/:path",
 				element: <BoardGamesView />,
-			},
-			{
-				path: "/board-games/login",
-				element: <Login />,
-			},
-			{
-				path: "/board-games/user",
-				element: <UserView />,
 			},
 		],
 	},

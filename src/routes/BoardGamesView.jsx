@@ -5,9 +5,11 @@ import CategoriesBrowser from "../components/BoardGamesBrowser/CategoriesBrowser
 import DetailedBoardGame from "../components/BoardGamesBrowser/DetailedPages/DetailedBoardGame";
 import DetailedType from "../components/BoardGamesBrowser/DetailedPages/DetailedType";
 import { createContext, useContext } from "react";
+import Login from "../components/BoardGamesBrowser/Login";
+import UserPage from "../components/BoardGamesBrowser/UserPage";
 
-// const API_URL = "/api";
-const API_URL = "http://98.71.35.179/api";
+const API_URL = "/api";
+// const API_URL = "http://98.71.35.179/api";
 
 const BG_APIContext = createContext();
 
@@ -40,6 +42,10 @@ export default function BoardGamesView() {
 		content = (
 			<DetailedBoardGame type="BoardGames" id={params.path.slice(11)} />
 		);
+	} else if (params.path === "login") {
+		content = <Login />;
+	} else if (params.path === "user") {
+		content = <UserPage />;
 	}
 
 	return (
