@@ -1,0 +1,75 @@
+.boardGameView {
+	position: relative;
+	margin: 2rem;
+}
+
+.boardGameCard {
+	position: relative;
+	padding: 1rem;
+	background-color: #121418;
+}
+
+.rating {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.rating::before {
+	position: absolute;
+	content: "\002B22";
+	font-size: 7rem;
+	z-index: 1;
+}
+
+.rating p {
+	position: relative;
+	padding-top: 2.75rem;
+	padding-left: 1.5rem;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: white;
+	z-index: 10;
+}
+
+.titleWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.titleWrapper h2 {
+	font-size: 2rem;
+}
+
+.titleWrapper h2 span {
+	padding-top: 0.375rem;
+	font-size: 1.25rem;
+}
+
+.infoWrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	margin-top: 3rem;
+}
+
+.infoWrapper div {
+	display: flex;
+	flex-direction: column;
+}
+
+.linksWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-top: 2rem;
+}
+
+.link {
+	text-decoration: underline;
+}
+
+.descriptionWrapper {
+	margin-top: 2rem;
+}

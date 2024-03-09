@@ -1,0 +1,25 @@
+.typeView {
+	position: relative;
+	margin: 2rem;
+}
+
+.typeView h2 {
+	font-size: 2rem;
+}
+
+.typeView h3 {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+}
+
+.typeView ul {
+	margin-left: 1rem;
+}
+
+.typeView ul li {
+	cursor: pointer;
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+	text-decoration: underline;
+	font-size: 1.25rem;
+}

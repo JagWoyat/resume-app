@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./BoardGamesBrowser.module.css";
-import PostBGForm from "./PostBGForm";
 import { useNavigate } from "react-router-dom";
-
-const API_URL = "/api";
-// const API_URL = "http://98.71.35.179/api";
+import { useBG_APIContext } from "../../routes/BoardGamesView";
 
 export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+
+	const API_URL = useBG_APIContext();
+
 	const navigate = useNavigate();
 
 	function handleSubmit(event) {

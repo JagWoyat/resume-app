@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import styles from "./BoardGamesBrowser.module.css";
 import { useNavigate } from "react-router-dom";
+import { useBG_APIContext } from "../../routes/BoardGamesView";
 
 const HeadTitles = ["Name", "Board Game Count"];
 
-const API_URL = "/api";
-// const API_URL = "http://98.71.35.179/api/";
-
 export default function DesignersBrowser() {
 	const [designers, setDesigners] = useState(null);
+
+	const API_URL = useBG_APIContext();
 
 	const navigate = useNavigate();
 

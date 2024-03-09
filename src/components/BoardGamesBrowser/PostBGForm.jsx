@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./PostBGForm.module.css";
-
-const API_URL = "/api";
-// const API_URL = "http://98.71.35.179/api";
+import { useBG_APIContext } from "../../routes/BoardGamesView";
 
 export default function PostBGForm() {
 	const [enteredValues, setEnteredValues] = useState({
@@ -23,6 +21,8 @@ export default function PostBGForm() {
 	});
 	const [statusCode, setStatusCode] = useState(0);
 	const [fetchSucess, setFetchSucess] = useState(false);
+
+	const API_URL = useBG_APIContext();
 
 	const JWT = sessionStorage.getItem("JWT");
 

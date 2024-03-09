@@ -2,7 +2,24 @@ import { useParams } from "react-router-dom";
 import BoardGamesBrowser from "../components/BoardGamesBrowser/BoardGamesBrowser";
 import DesignersBrowser from "../components/BoardGamesBrowser/DesignersBrowser";
 import CategoriesBrowser from "../components/BoardGamesBrowser/CategoriesBrowser";
-import Details from "../components/BoardGamesBrowser/Details";
+import DetailedBoardGame from "../components/BoardGamesBrowser/DetailedPages/DetailedBoardGame";
+import DetailedType from "../components/BoardGamesBrowser/DetailedPages/DetailedType";
+import { createContext, useContext } from "react";
+
+const API_URL = "/api";
+// const API_URL = "http://98.71.35.179/api";
+
+const BG_APIContext = createContext();
+
+export function useBG_APIContext() {
+	const context = useContext(BG_APIContext);
+
+	if (!context) {
+		throw new Error("Couldnt get BoardGame API context");
+	}
+
+	return context;
+}
 
 export default function BoardGamesView() {
 	const params = useParams();
@@ -16,12 +33,16 @@ export default function BoardGamesView() {
 	} else if (params.path === "categories") {
 		content = <CategoriesBrowser />;
 	} else if (params.path.startsWith("categoryID")) {
-		content = <Details type="Categories" id={params.path.slice(10)} />;
+		content = <DetailedType type="Categories" id={params.path.slice(10)} />;
 	} else if (params.path.startsWith("designerID")) {
-		content = <Details type="Designers" id={params.path.slice(10)} />;
+		content = <DetailedType type="Designers" id={params.path.slice(10)} />;
 	} else if (params.path.startsWith("boardGameID")) {
-		content = <Details type="BoardGames" id={params.path.slice(11)} />;
+		content = (
+			<DetailedBoardGame type="BoardGames" id={params.path.slice(11)} />
+		);
 	}
 
-	return <>{content}</>;
+	return (
+		<BG_APIContext.Provider value={API_URL}>{content}</BG_APIContext.Provider>
+	);
 }
