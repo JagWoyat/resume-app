@@ -92,7 +92,7 @@ export default function PostBGForm() {
 
 		setFetchSucess(false);
 
-		const url = API_URL + "/BoardGames";
+		const url = API_URL + "/api/BoardGames";
 
 		const json = JSON.stringify(enteredValues);
 

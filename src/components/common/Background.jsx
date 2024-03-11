@@ -5,7 +5,7 @@ export default function Background({ background, placeholder }) {
 	const [placeholderLoaded, setPlaceholderLoaded] = useState(false);
 
 	function handleLoaded() {
-		setTimeout(() => setPlaceholderLoaded(true), 1000);
+		setTimeout(() => setPlaceholderLoaded(true), 500);
 	}
 
 	return (

@@ -67,7 +67,7 @@ export default function DetailedBoardGame({ type, id }) {
 								style={{ color: `${getRatingColor(details.rating)}` }}
 								className={styles.rating}
 							>
-								<p>{Math.round(details.rating * 10) / 10}</p>
+								<p>{parseFloat(details.rating).toFixed(1)}</p>
 							</div>
 							<h2>
 								{details.name} <span>({details.year})</span>
