@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
-import BoardGamesBrowser from "../components/BoardGamesBrowser/BoardGamesBrowser";
-import DesignersBrowser from "../components/BoardGamesBrowser/DesignersBrowser";
-import CategoriesBrowser from "../components/BoardGamesBrowser/CategoriesBrowser";
+import BoardGamesBrowser from "../components/BoardGamesBrowser/Browsers/BoardGamesBrowser";
+import DesignersBrowser from "../components/BoardGamesBrowser/Browsers/DesignersBrowser";
+import CategoriesBrowser from "../components/BoardGamesBrowser/Browsers/CategoriesBrowser";
 import DetailedBoardGame from "../components/BoardGamesBrowser/DetailedPages/DetailedBoardGame";
 import DetailedType from "../components/BoardGamesBrowser/DetailedPages/DetailedType";
 import { createContext, useContext } from "react";
 import Login from "../components/BoardGamesBrowser/Login";
 import UserPage from "../components/BoardGamesBrowser/UserPage";
+import AboutPage from "../components/BoardGamesBrowser/AboutPage";
 
 const API_URL = "/api";
 // const API_URL = "http://98.71.35.179/api";
@@ -46,6 +47,8 @@ export default function BoardGamesView() {
 		content = <Login />;
 	} else if (params.path === "user") {
 		content = <UserPage />;
+	} else if (params.path === "about") {
+		content = <AboutPage />;
 	}
 
 	return (

@@ -61,6 +61,10 @@ table th {
 	text-align: center;
 }
 
+.tableHeader:hover {
+	background-color: #494949;
+}
+
 .head {
 	display: flex;
 	flex-direction: column;

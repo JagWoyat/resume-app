@@ -1,8 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
 import styles from "./BoardGamesBrowser.module.css";
-import { sliceWords } from "../../util/boardGames";
+import { sliceWords } from "../../../util/boardGames";
 import { Link, useNavigate } from "react-router-dom";
-import { useBG_APIContext } from "../../routes/BoardGamesView";
+import { useBG_APIContext } from "../../../routes/BoardGamesView";
+import TableHeader from "./TableHeader";
 
 const HeadTitles = [
 	{ apiHandle: "Name", name: "Name" },
@@ -55,18 +56,6 @@ export default function BoardGamesBrowser() {
 		fetchData();
 	}, [page, orderBy, orderTarget]);
 
-	function getOrderArrow(apiHandle) {
-		let char = "";
-		if (apiHandle === orderTarget) {
-			if (orderBy === "default") {
-				char = "\u2191";
-			} else if (orderBy === "desc") {
-				char = "\u2193";
-			}
-		}
-		return char;
-	}
-
 	return (
 		<section>
 			{!loading ? (
@@ -77,33 +66,14 @@ export default function BoardGamesBrowser() {
 								<thead>
 									<tr>
 										{HeadTitles.map((obj) => (
-											<th
-												className={styles.tableHead}
-												onClick={() => {
-													if (!obj.returnsObject) {
-														if (orderTarget !== obj.apiHandle) {
-															setOrderBy("default");
-														} else {
-															setOrderBy((prevValue) => {
-																if (prevValue === "none") {
-																	return "default";
-																} else if (prevValue === "default") {
-																	return "desc";
-																} else if (prevValue === "desc") {
-																	return "none";
-																}
-															});
-														}
-														setOrderTarget(obj.apiHandle);
-													}
-												}}
+											<TableHeader
 												key={obj.apiHandle}
-											>
-												{obj.name}{" "}
-												<span style={{ fontSize: "1.5rem" }}>
-													{getOrderArrow(obj.apiHandle)}
-												</span>
-											</th>
+												obj={obj}
+												orderBy={orderBy}
+												setOrderBy={setOrderBy}
+												orderTarget={orderTarget}
+												setOrderTarget={setOrderTarget}
+											/>
 										))}
 									</tr>
 								</thead>

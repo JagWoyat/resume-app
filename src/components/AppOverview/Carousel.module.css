@@ -41,7 +41,7 @@
 	background: none;
 	border: none;
 	cursor: pointer;
-	background-color: grey;
+	background-color: rgb(128, 128, 128);
 	padding: 1rem;
 	z-index: 1;
 }
@@ -53,7 +53,7 @@
 .card_title {
 	position: absolute;
 	width: 60%;
-	background-color: rgba(30, 33, 38, 0.5);
+	background-color: rgba(128, 128, 128, 0.7);
 	padding-top: 1.5rem;
 	height: 4rem;
 	bottom: 0;
@@ -65,7 +65,7 @@
 
 .card_title:hover,
 .card_title:focus {
-	background-color: rgba(30, 33, 38, 0.7);
+	background-color: rgba(128, 128, 128, 0.8);
 }
 
 .card_title a {

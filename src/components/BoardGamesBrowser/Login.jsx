@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./BoardGamesBrowser.module.css";
+import styles from "./Browsers/BoardGamesBrowser.module.css";
 import { useNavigate } from "react-router-dom";
 import { useBG_APIContext } from "../../routes/BoardGamesView";
 

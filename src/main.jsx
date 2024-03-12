@@ -48,7 +48,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/board-games",
-				element: <Navigate to="/board-games/games" />,
+				element: <Navigate to="/board-games/about" />,
 			},
 			{
 				path: "/board-games/:path",

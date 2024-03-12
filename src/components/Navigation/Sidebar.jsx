@@ -10,26 +10,6 @@ const WIDTH_BREAKPOINT = 1000;
 
 const NAV_ITEMS = [
 	{
-		title: "Weather App",
-		link: "/weather-app",
-		sublinks: null,
-	},
-	{
-		title: "Cryptocurrency App",
-		link: "/crypto-app",
-		sublinks: null,
-	},
-	{
-		title: "Image Editor with Go",
-		link: "/image-editor",
-		sublinks: null,
-	},
-	{
-		title: "Image Viewer",
-		link: "/scroll",
-		sublinks: null,
-	},
-	{
 		title: "Board Game Browser (.NET)",
 		link: "/board-games",
 		sublinks: [
@@ -50,6 +30,26 @@ const NAV_ITEMS = [
 				link: "/board-games/login",
 			},
 		],
+	},
+	{
+		title: "Image Editor with Go",
+		link: "/image-editor",
+		sublinks: null,
+	},
+	{
+		title: "Image Viewer",
+		link: "/scroll",
+		sublinks: null,
+	},
+	{
+		title: "Weather App",
+		link: "/weather-app",
+		sublinks: null,
+	},
+	{
+		title: "Cryptocurrency App",
+		link: "/crypto-app",
+		sublinks: null,
 	},
 ];
 
