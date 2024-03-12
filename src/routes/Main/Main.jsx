@@ -27,7 +27,7 @@ export default function Main() {
 				<h3 className={styles.mainTitle}>
 					Resume App <span>(in progress)</span>
 				</h3>
-				<p>I'm an aspiring web developer with focus on React.</p>
+				<p>I'm an aspiring web developer with focus on React+.NET</p>
 				<p>You can find some of my projects on the sidebar</p>
 				<Carousel items={CERTIFICATIONS} />
 			</section>
