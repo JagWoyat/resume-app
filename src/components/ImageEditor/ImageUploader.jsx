@@ -59,11 +59,11 @@ export default function ImageUploader({ title, request }) {
 		const file = event.dataTransfer?.files[0];
 
 		if (file) {
+			setImage(file);
 			const reader = new FileReader();
 
 			reader.onload = (event) => {
 				setImagePreview(event.target?.result);
-				setImage(event.target?.result);
 			};
 
 			reader.readAsDataURL(file);
