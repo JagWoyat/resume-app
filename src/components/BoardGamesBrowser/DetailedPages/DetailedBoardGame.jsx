@@ -9,7 +9,7 @@ export default function DetailedBoardGame({ type, id }) {
 	const [showDescription, setShowDescription] = useState(false);
 	const [description, setDescription] = useState("");
 
-	const API_URL = useBG_APIContext();
+	const { API_URL, setRefresh } = useBG_APIContext();
 
 	const navigate = useNavigate();
 

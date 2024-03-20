@@ -6,7 +6,7 @@ import { useBG_APIContext } from "../../../routes/BoardGamesView";
 export default function DetailedType({ type, id }) {
 	const [details, setDetails] = useState();
 
-	const API_URL = useBG_APIContext();
+	const { API_URL, setRefresh } = useBG_APIContext();
 
 	const navigate = useNavigate();
 

@@ -25,10 +25,6 @@ const NAV_ITEMS = [
 				title: "Designers",
 				link: "/board-games/designers",
 			},
-			{
-				title: "Secret login page",
-				link: "/board-games/login",
-			},
 		],
 	},
 	{

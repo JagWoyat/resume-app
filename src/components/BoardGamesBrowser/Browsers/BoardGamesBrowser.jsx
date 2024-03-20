@@ -25,8 +25,9 @@ export default function BoardGamesBrowser() {
 	const [page, setPage] = useState(1);
 	const [orderBy, setOrderBy] = useState("none"); // none, default, desc
 	const [orderTarget, setOrderTarget] = useState("");
+	const [fliter, setFilter] = useState("");
 
-	const API_URL = useBG_APIContext();
+	const { API_URL, setRefresh } = useBG_APIContext();
 
 	const navigate = useNavigate();
 

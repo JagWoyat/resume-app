@@ -7,7 +7,7 @@ export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
-	const API_URL = useBG_APIContext();
+	const { API_URL, setRefresh } = useBG_APIContext();
 
 	const navigate = useNavigate();
 

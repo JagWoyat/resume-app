@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BoardGamesBrowser from "../components/BoardGamesBrowser/Browsers/BoardGamesBrowser";
 import DesignersBrowser from "../components/BoardGamesBrowser/Browsers/DesignersBrowser";
 import CategoriesBrowser from "../components/BoardGamesBrowser/Browsers/CategoriesBrowser";
 import DetailedBoardGame from "../components/BoardGamesBrowser/DetailedPages/DetailedBoardGame";
 import DetailedType from "../components/BoardGamesBrowser/DetailedPages/DetailedType";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Login from "../components/BoardGamesBrowser/Login";
 import UserPage from "../components/BoardGamesBrowser/UserPage";
 import AboutPage from "../components/BoardGamesBrowser/AboutPage";
+import Navbar from "../components/BoardGamesBrowser/Navbar";
 
 const API_URL = "/api";
 // const API_URL = "http://98.71.35.179/api";
@@ -25,7 +26,17 @@ export function useBG_APIContext() {
 }
 
 export default function BoardGamesView() {
+	const [refresh, setRefresh] = useState(false);
 	const params = useParams();
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (refresh === true) {
+			setRefresh(false);
+			navigate(0);
+		}
+	}, [refresh]);
 
 	let content = <div>Bad request</div>;
 
@@ -52,6 +63,9 @@ export default function BoardGamesView() {
 	}
 
 	return (
-		<BG_APIContext.Provider value={API_URL}>{content}</BG_APIContext.Provider>
+		<BG_APIContext.Provider value={{ API_URL, setRefresh }}>
+			<Navbar />
+			{content}
+		</BG_APIContext.Provider>
 	);
 }

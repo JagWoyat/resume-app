@@ -45,9 +45,8 @@ export default function AboutPage() {
 				<h4>In progress</h4>
 				<li>Loging in and handling resulting JWT</li>
 				<li>Handling POST, PUT and DELETE requests</li>
-				<li>Error handling</li>
-				<h4>ToDo</h4>
 				<li>Implement searching</li>
+				<li>Error handling</li>
 				<li>Navbar</li>
 			</ul>
 		</article>

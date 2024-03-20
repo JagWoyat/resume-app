@@ -21,7 +21,7 @@ export default function TableHeader({
 
 	return (
 		<th
-			className={!obj.returnsObject && styles.tableHeader}
+			className={!obj.returnsObject ? styles.tableHeader : ""}
 			onClick={() => {
 				if (!obj.returnsObject) {
 					if (orderTarget !== obj.apiHandle) {

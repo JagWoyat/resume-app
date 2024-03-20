@@ -22,7 +22,7 @@ export default function PostBGForm() {
 	const [statusCode, setStatusCode] = useState(0);
 	const [fetchSucess, setFetchSucess] = useState(false);
 
-	const API_URL = useBG_APIContext();
+	const { API_URL, setRefresh } = useBG_APIContext();
 
 	const JWT = sessionStorage.getItem("JWT");
 

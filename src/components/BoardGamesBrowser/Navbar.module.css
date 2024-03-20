@@ -1,0 +1,97 @@
+.boardGameNav {
+	position: relative;
+	top: 0;
+	/* left: var(--sidebar-width); */
+	margin: 0;
+	padding-left: 1rem;
+	background-color: black;
+	height: 4rem;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.navWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+}
+
+.searchInput {
+	--input-height: 1.25rem;
+	--input-width: 16rem;
+
+	position: relative;
+}
+
+.searchInput input {
+	box-sizing: border-box;
+	height: var(--input-height);
+	width: var(--input-width);
+}
+
+.searchInput ul {
+	position: absolute;
+	top: var(--input-height);
+	left: 0px;
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	border-radius: 4px;
+}
+
+.searchInput li {
+	box-sizing: border-box;
+	padding: 0.25rem;
+	height: calc(var(--input-height) * 1.5);
+	width: var(--input-width);
+	background-color: gray;
+	border: 1px solid darkgray;
+	z-index: 100;
+}
+
+.searchResult:hover {
+	background-color: rgb(99, 99, 99);
+}
+
+.searchForm {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+.links {
+	display: flex;
+	margin: auto;
+	margin-right: 2rem;
+	flex-direction: row;
+	gap: 1rem;
+}
+
+.links a {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.routeLink {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+.routeLinkPending {
+	color: white;
+	text-decoration: none;
+}
+
+.routeLinkActive {
+	color: whitesmoke;
+	text-decoration: underline;
+	text-decoration-color: var(--primary-color);
+	background-color: var(--primary-background-color);
+}
+
+.ulTestowe {
+	display: none;
+}
