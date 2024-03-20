@@ -63,6 +63,7 @@ export default function ImageUploader({ title, request }) {
 
 			reader.onload = (event) => {
 				setImagePreview(event.target?.result);
+				setImage(event.target?.result);
 			};
 
 			reader.readAsDataURL(file);
