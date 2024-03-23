@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useBG_APIContext } from "../../routes/BoardGamesView";
+import { getWindowSize } from "../../util/util";
 
 const LINKS = [
 	{
@@ -41,15 +42,22 @@ const DATA_TYPES = [
 	},
 ];
 
+const WIDTH_BREAKPOINT = 1439;
+
 export default function Navbar() {
+	const navigate = useNavigate();
+	const location = useLocation();
+
 	const [searchInput, setSearchInput] = useState("");
-	const [path, setPath] = useState(DATA_TYPES[0].path);
+	const [APIPath, setAPIPath] = useState(DATA_TYPES[0].path);
+	const [path, setPath] = useState(location.pathname);
 	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState([]);
 
 	const { API_URL, setRefresh } = useBG_APIContext();
 
-	const navigate = useNavigate();
+	const lastChange = useRef();
+	const [windowSize, setWindowSize] = useState(getWindowSize());
 
 	const [inputFocus, setInputFocus] = useState(false);
 	const [inputDropdown, setInputDropdown] = useState(false);
@@ -58,7 +66,7 @@ export default function Navbar() {
 		if (searchInput !== "") {
 			setLoading(true);
 			async function fetchData() {
-				let URL = API_URL + path + `/Search:${searchInput}?$top=5`;
+				let URL = API_URL + APIPath + `/Search:${searchInput}?$top=5`;
 				const res = await fetch(URL);
 				if (!res.ok) {
 					return;
@@ -72,15 +80,38 @@ export default function Navbar() {
 		}
 	}, [searchInput]);
 
+	useEffect(() => {
+		function handleResize() {
+			setWindowSize(getWindowSize);
+		}
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	});
+
+	useEffect(() => {
+		setPath(location.pathname);
+	}, [location]);
+
 	function handleFocusChange(value) {
 		setTimeout(() => {
-			setInputFocus(false);
-			setInputDropdown(false);
+			setInputFocus(value);
+			setInputDropdown(value);
 		}, 100);
 	}
 
 	function handleChange(event) {
-		setSearchInput(event.target.value);
+		if (!lastChange.current) {
+			clearTimeout(lastChange.current);
+		}
+
+		lastChange.current = setTimeout(() => {
+			lastChange.current = null;
+			setSearchInput(event.target.value);
+		}, 500);
+
 		if (event.target.value === "") {
 			setInputDropdown(false);
 		} else {
@@ -98,7 +129,6 @@ export default function Navbar() {
 							onChange={(e) => handleChange(e)}
 							onFocus={() => setInputFocus(true)}
 							onBlur={() => handleFocusChange(false)}
-							value={searchInput}
 							placeholder="Search"
 						/>
 						{/* <label>Submit</label> */}
@@ -134,8 +164,8 @@ export default function Navbar() {
 					</div>
 					{/* <label>Type:</label>
 					<select
-						value={path}
-						onChange={(event) => setPath(event.target.value)}
+						value={APIPath}
+						onChange={(event) => setAPIPath(event.target.value)}
 					>
 						{DATA_TYPES.map((type) => {
 							return (
@@ -148,23 +178,43 @@ export default function Navbar() {
 				</form>
 			</div>
 			<div className={styles.links}>
-				{LINKS.map((page) => {
-					return (
-						<NavLink
-							className={({ isActive, isPending }) =>
-								isPending
-									? styles.routeLinkPending
-									: isActive
-									? styles.routeLinkActive
-									: styles.routeLink
-							}
-							to={page.link}
-							key={page.title}
-						>
-							{page.title}
-						</NavLink>
-					);
-				})}
+				{windowSize.innerWidth > WIDTH_BREAKPOINT ? (
+					<>
+						{LINKS.map((page) => {
+							return (
+								<NavLink
+									className={({ isActive, isPending }) =>
+										isPending
+											? styles.routeLinkPending
+											: isActive
+											? styles.routeLinkActive
+											: styles.routeLink
+									}
+									to={page.link}
+									key={page.title}
+								>
+									{page.title}
+								</NavLink>
+							);
+						})}
+					</>
+				) : (
+					<select
+						value={path}
+						onChange={(event) => {
+							setPath(event.target.value);
+							navigate(event.target.value);
+						}}
+					>
+						{LINKS.map((type) => {
+							return (
+								<option value={type.link} key={type.link}>
+									{type.title}
+								</option>
+							);
+						})}
+					</select>
+				)}
 			</div>
 		</nav>
 	);
