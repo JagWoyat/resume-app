@@ -73,7 +73,8 @@ export default function Navbar() {
 				if (APIPath === "categories") {
 					path = "/Categories";
 				}
-				let URL = API_URL + path + `/Search:${searchInput}?$top=5`;
+				let URL =
+					API_URL + path + `/Search:${searchInput}?$top=5&$orderby=FilterValue`;
 				const res = await fetch(URL);
 				if (!res.ok) {
 					return;
