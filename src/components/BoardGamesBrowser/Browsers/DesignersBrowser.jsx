@@ -3,6 +3,7 @@ import styles from "./BoardGamesBrowser.module.css";
 import { useNavigate } from "react-router-dom";
 import { useBG_APIContext } from "../../../routes/BoardGamesView";
 import TableHeader from "./TableHeader";
+import { fetchData, fetchSearch } from "../../../util/boardGames";
 
 const HeadTitles = [
 	{ apiHandle: "Name", name: "Name" },
@@ -11,7 +12,7 @@ const HeadTitles = [
 
 const PAGE_SIZE = 25;
 
-export default function DesignersBrowser() {
+export default function DesignersBrowser({ searchParam }) {
 	const [designers, setDesigners] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [page, setPage] = useState(1);
@@ -24,28 +25,60 @@ export default function DesignersBrowser() {
 
 	useEffect(() => {
 		setLoading(true);
-		async function fetchData() {
-			let URL = API_URL + "/Designers?";
-			if (page > 1) {
-				URL = URL + `$skip=${(page - 1) * PAGE_SIZE}&`;
-			}
-			if (orderTarget !== "" && orderBy !== "none") {
-				if (orderBy === "default") {
-					URL = URL + `orderby=${orderTarget}`;
-				} else if (orderBy === "desc") {
-					URL = URL + `orderby=${orderTarget} desc`;
-				}
-			}
-			const res = await fetch(URL);
-			if (!res.ok) {
-				return;
-			}
-			const bgs = await res.json();
-			setDesigners(bgs);
+		if (searchParam) {
+			(async () => {
+				setDesigners(
+					await fetchSearch(
+						API_URL,
+						searchParam,
+						"Designers",
+						orderTarget,
+						orderBy,
+						page,
+						PAGE_SIZE
+					)
+				);
+			})();
+			setLoading(false);
+		} else {
+			(async () => {
+				setDesigners(
+					await fetchData(
+						API_URL,
+						"Designers",
+						orderTarget,
+						orderBy,
+						page,
+						PAGE_SIZE
+					)
+				);
+			})();
 			setLoading(false);
 		}
 
-		fetchData();
+		// setLoading(true);
+		// async function fetchData() {
+		// 	let URL = API_URL + "/Designers?";
+		// 	if (page > 1) {
+		// 		URL = URL + `$skip=${(page - 1) * PAGE_SIZE}&`;
+		// 	}
+		// 	if (orderTarget !== "" && orderBy !== "none") {
+		// 		if (orderBy === "default") {
+		// 			URL = URL + `orderby=${orderTarget}`;
+		// 		} else if (orderBy === "desc") {
+		// 			URL = URL + `orderby=${orderTarget} desc`;
+		// 		}
+		// 	}
+		// 	const res = await fetch(URL);
+		// 	if (!res.ok) {
+		// 		return;
+		// 	}
+		// 	const bgs = await res.json();
+		// 	setDesigners(bgs);
+		// 	setLoading(false);
+		// }
+
+		// fetchData();
 	}, [page, orderBy, orderTarget]);
 
 	return (

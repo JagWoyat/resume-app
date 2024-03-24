@@ -40,12 +40,12 @@ export default function BoardGamesView() {
 
 	let content = <div>Bad request</div>;
 
-	if (params.path === "games") {
-		content = <BoardGamesBrowser />;
-	} else if (params.path === "designers") {
-		content = <DesignersBrowser />;
-	} else if (params.path === "categories") {
-		content = <CategoriesBrowser />;
+	if (params.path.startsWith("games")) {
+		content = <BoardGamesBrowser searchParam={params.path.slice(6)} />;
+	} else if (params.path.startsWith("designers")) {
+		content = <DesignersBrowser searchParam={params.path.slice(10)} />;
+	} else if (params.path.startsWith("categories")) {
+		content = <CategoriesBrowser searchParam={params.path.slice(11)} />;
 	} else if (params.path.startsWith("categoryID")) {
 		content = <DetailedType type="Categories" id={params.path.slice(10)} />;
 	} else if (params.path.startsWith("designerID")) {

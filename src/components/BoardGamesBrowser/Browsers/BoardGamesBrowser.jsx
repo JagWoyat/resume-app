@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import styles from "./BoardGamesBrowser.module.css";
-import { sliceWords } from "../../../util/boardGames";
+import { fetchData, fetchSearch, sliceWords } from "../../../util/boardGames";
 import { Link, useNavigate } from "react-router-dom";
 import { useBG_APIContext } from "../../../routes/BoardGamesView";
 import TableHeader from "./TableHeader";
@@ -19,7 +19,7 @@ const HeadTitles = [
 
 const PAGE_SIZE = 25;
 
-export default function BoardGamesBrowser() {
+export default function BoardGamesBrowser({ searchParam }) {
 	const [boardGames, setBoardGames] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [page, setPage] = useState(1);
@@ -33,28 +33,36 @@ export default function BoardGamesBrowser() {
 
 	useEffect(() => {
 		setLoading(true);
-		async function fetchData() {
-			let URL = API_URL + "/BoardGames?";
-			if (page > 1) {
-				URL = URL + `$skip=${(page - 1) * PAGE_SIZE}&`;
-			}
-			if (orderTarget !== "" && orderBy !== "none") {
-				if (orderBy === "default") {
-					URL = URL + `orderby=${orderTarget}`;
-				} else if (orderBy === "desc") {
-					URL = URL + `orderby=${orderTarget} desc`;
-				}
-			}
-			const res = await fetch(URL);
-			if (!res.ok) {
-				return;
-			}
-			const bgs = await res.json();
-			setBoardGames(bgs);
+		if (searchParam) {
+			(async () => {
+				setBoardGames(
+					await fetchSearch(
+						API_URL,
+						searchParam,
+						"BoardGames",
+						orderTarget,
+						orderBy,
+						page,
+						PAGE_SIZE
+					)
+				);
+			})();
+			setLoading(false);
+		} else {
+			(async () => {
+				setBoardGames(
+					await fetchData(
+						API_URL,
+						"BoardGames",
+						orderTarget,
+						orderBy,
+						page,
+						PAGE_SIZE
+					)
+				);
+			})();
 			setLoading(false);
 		}
-
-		fetchData();
 	}, [page, orderBy, orderTarget]);
 
 	return (

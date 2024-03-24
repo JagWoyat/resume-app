@@ -30,15 +30,15 @@ const LINKS = [
 const DATA_TYPES = [
 	{
 		name: "Board Games",
-		path: "/BoardGames",
+		path: "games",
 	},
 	{
 		name: "Designers",
-		path: "/Designers",
+		path: "designers",
 	},
 	{
 		name: "Categories",
-		path: "/Categories",
+		path: "categories",
 	},
 ];
 
@@ -66,7 +66,14 @@ export default function Navbar() {
 		if (searchInput !== "") {
 			setLoading(true);
 			async function fetchData() {
-				let URL = API_URL + APIPath + `/Search:${searchInput}?$top=5`;
+				let path = "/BoardGames";
+				if (APIPath === "designers") {
+					path = "/Designers";
+				}
+				if (APIPath === "categories") {
+					path = "/Categories";
+				}
+				let URL = API_URL + path + `/Search:${searchInput}?$top=5`;
 				const res = await fetch(URL);
 				if (!res.ok) {
 					return;
@@ -119,11 +126,19 @@ export default function Navbar() {
 		}
 	}
 
+	function handleSubmit(event) {
+		event.preventDefault();
+
+		// let URL = API_URL + APIPath + `/Search:${searchInput}`;
+		setRefresh(true);
+		navigate(`/board-games/${APIPath}-${searchInput}`);
+	}
+
 	return (
 		<nav className={styles.boardGameNav}>
 			<div className={styles.navWrapper}>
 				<h2>Board Games</h2>
-				<form className={styles.searchForm}>
+				<form className={styles.searchForm} onSubmit={(e) => handleSubmit(e)}>
 					<div className={styles.searchInput}>
 						<input
 							onChange={(e) => handleChange(e)}
@@ -131,7 +146,9 @@ export default function Navbar() {
 							onBlur={() => handleFocusChange(false)}
 							placeholder="Search"
 						/>
-						{/* <label>Submit</label> */}
+						<button className={styles.submitButton} type="submit">
+							<label>Submit</label>
+						</button>
 						<div className={!inputDropdown ? styles.ulTestowe : ""}>
 							{!loading ? (
 								<ul>
@@ -162,10 +179,12 @@ export default function Navbar() {
 							)}
 						</div>
 					</div>
-					{/* <label>Type:</label>
+					<label>Type:</label>
 					<select
 						value={APIPath}
-						onChange={(event) => setAPIPath(event.target.value)}
+						onChange={(event) => {
+							setAPIPath(event.target.value);
+						}}
 					>
 						{DATA_TYPES.map((type) => {
 							return (
@@ -174,7 +193,7 @@ export default function Navbar() {
 								</option>
 							);
 						})}
-					</select> */}
+					</select>
 				</form>
 			</div>
 			<div className={styles.links}>

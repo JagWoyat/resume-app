@@ -42,10 +42,10 @@ export default function AboutPage() {
 				<li>Fetching and displaying data</li>
 				<li>Details pages</li>
 				<li>Sorting by type (Categories and Designers excluded) with paging</li>
+				<li>Searching by name</li>
 				<h4>In progress</h4>
 				<li>Loging in and handling resulting JWT</li>
 				<li>Handling POST, PUT and DELETE requests</li>
-				<li>Implement searching</li>
 				<li>Error handling</li>
 				<li>Navbar</li>
 			</ul>
