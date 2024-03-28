@@ -42,7 +42,7 @@ const DATA_TYPES = [
 	},
 ];
 
-const WIDTH_BREAKPOINT = 1439;
+const WIDTH_BREAKPOINT = 1449;
 
 export default function Navbar() {
 	const navigate = useNavigate();
@@ -139,7 +139,11 @@ export default function Navbar() {
 		<nav className={styles.boardGameNav}>
 			<div className={styles.navWrapper}>
 				<h2>Board Games</h2>
-				<form className={styles.searchForm} onSubmit={(e) => handleSubmit(e)}>
+				<form
+					role="search"
+					className={styles.searchForm}
+					onSubmit={(e) => handleSubmit(e)}
+				>
 					<div className={styles.searchInput}>
 						<input
 							onChange={(e) => handleChange(e)}
@@ -156,18 +160,27 @@ export default function Navbar() {
 									{data.length > 0 ? (
 										<>
 											{" "}
-											{data.map((obj) => (
-												<li
-													className={styles.searchResult}
-													key={obj.id}
-													onClick={() => {
-														setRefresh(true);
-														navigate(`/board-games/boardGameID${obj.id}`);
-													}}
-												>
-													{obj.name}
-												</li>
-											))}
+											{data.map((obj) => {
+												let path = "boardGame";
+												if (APIPath === "designers") {
+													path = "designer";
+												}
+												if (APIPath === "categories") {
+													path = "category";
+												}
+												return (
+													<li
+														className={styles.searchResult}
+														key={obj.id}
+														onClick={() => {
+															setRefresh(true);
+															navigate(`/board-games/${path}ID${obj.id}`);
+														}}
+													>
+														{obj.name}
+													</li>
+												);
+											})}
 										</>
 									) : (
 										<li>No results</li>
@@ -198,7 +211,7 @@ export default function Navbar() {
 				</form>
 			</div>
 			<div className={styles.links}>
-				{windowSize.innerWidth > WIDTH_BREAKPOINT ? (
+				{windowSize.innerWidth >= WIDTH_BREAKPOINT ? (
 					<>
 						{LINKS.map((page) => {
 							return (
